@@ -1,0 +1,87 @@
+### Q1: Function to return a list of odd numbers in range 1 to 25
+
+def odd_numbers():
+    return [num for num in range(1, 26) if num % 2 != 0]
+
+print(odd_numbers())
+
+### Q2: Using *args and **kwargs
+
+def demo_args(*args):
+    print("Args:", args)
+
+def demo_kwargs(**kwargs):
+    print("Kwargs:", kwargs)
+
+demo_args(1, 2, 3, "hello")
+demo_kwargs(name="Alice", age=25, city="New York")
+
+### Q3: Iterator in Python
+
+nums = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+iter_nums = iter(nums)
+
+for _ in range(5):
+    print(next(iter_nums))
+
+### Q4: Generator Function and `yield`
+
+def my_generator():
+    for i in range(3):
+        yield i
+
+gen = my_generator()
+print(next(gen))
+print(next(gen))
+print(next(gen))
+
+### Q5: Generator function for prime numbers less than 1000
+
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def prime_generator():
+    for num in range(2, 1000):
+        if is_prime(num):
+            yield num
+
+prime_gen = prime_generator()
+for _ in range(20):
+    print(next(prime_gen))
+
+### Q6: Fibonacci Sequence using while loop
+
+def fibonacci(n):
+    a, b = 0, 1
+    count = 0
+    while count < n:
+        print(a, end=' ')
+        a, b = b, a + b
+        count += 1
+    print()
+
+fibonacci(10)
+
+### Q7: List Comprehension to iterate through 'pwskills'
+
+string = 'pwskills'
+result = [char for char in string if char.isalpha()]
+print(result)
+
+### Q8: Check if a number is palindrome
+
+def is_palindrome(n):
+    original = str(n)
+    reversed_n = original[::-1]
+    return original == reversed_n
+
+num = int(input("Enter a number: "))
+if is_palindrome(num):
+    print(f"{num} is a palindrome.")
+else:
+    print(f"{num} is not a palindrome.")
