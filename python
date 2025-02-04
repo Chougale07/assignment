@@ -1,0 +1,36 @@
+from functools import reduce
+
+### Q1: Sort list of tuples based on integer value using lambda
+
+players = [('Sachin Tendulkar', 34357), ('Ricky Ponting', 27483), ('Jack Kallis', 25534), ('Virat Kohli', 24936)]
+players_sorted = sorted(players, key=lambda x: x[1], reverse=True)
+print(players_sorted)
+
+### Q2: Find squares of numbers using lambda and map
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+squares = list(map(lambda x: x**2, numbers))
+print(squares)
+
+### Q3: Convert list of integers into tuple of strings using map and lambda
+
+numbers_str = tuple(map(lambda x: str(x), numbers))
+print(numbers_str)
+
+### Q4: Compute product of numbers from 1 to 25 using reduce
+
+nums = list(range(1, 26))
+product = reduce(lambda x, y: x * y, nums)
+print(product)
+
+### Q5: Filter numbers divisible by 2 and 3 using filter
+
+given_list = [2, 3, 6, 9, 27, 60, 90, 120, 55, 46]
+filtered_numbers = list(filter(lambda x: x % 2 == 0 and x % 3 == 0, given_list))
+print(filtered_numbers)
+
+### Q6: Find palindromes in the given list of strings using lambda and filter
+
+words = ['python', 'php', 'aba', 'radar', 'level']
+palindromes = list(filter(lambda word: word == word[::-1], words))
+print(palindromes)
